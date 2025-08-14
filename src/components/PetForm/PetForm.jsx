@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const PetForm = (props) =>{
-    const initialState ={
+    const initialState = {
         name: '',
         age: '',
         breed: '',
@@ -18,9 +18,12 @@ const PetForm = (props) =>{
     
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    props.handleAddPet(formData);
-    // Right now, if you add a pet and submit the form,
-    // the data entered will stay on the page. We'll fix this soon.
+
+        if (props.selected) {
+          props.handleUpdatePet(formData, props.selected._id);
+        } else { 
+        props.handleAddPet(formData);
+        }
   };
 
 

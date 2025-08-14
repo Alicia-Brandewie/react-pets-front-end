@@ -1,12 +1,12 @@
 const PetDetail = (props) => {
   // ecause passing something into this, use  'props' 
-  if (!props.selected) { // AKA if props.selected=null than...
+  if (!props.selected)  // AKA if props.selected=null than...
     return (
       <div>
         <h1>NO DETAILS</h1>
       </div>
     );
-  }
+  
 
   return (
     <div>
@@ -19,12 +19,12 @@ const PetDetail = (props) => {
           <button onClick={() => props.handleFormView(props.selected)}>
             Edit Pet
           </button>
-          <button onClick={() => props.handleDeletePet(props.seleted._id)}>
+          <button onClick={() => props.handleDeletePet(props.selected._id)}>
             Delete Pet
           </button>
         </div>
       </div>
       );
-};
+}
 
-      export default PetDetail;
+export default PetDetail;
