@@ -15,8 +15,16 @@ const PetDetail = (props) => {
       <h2>
         Age: {props.selected.age} years {props.selected.age > 1 ? 's' : ''} old
       </h2>
-    </div>
-  );
+        <div>
+          <button onClick={() => props.handleFormView(props.selected)}>
+            Edit Pet
+          </button>
+          <button onClick={() => props.handleDeletePet(props.seleted._id)}>
+            Delete Pet
+          </button>
+        </div>
+      </div>
+      );
 };
 
-export default PetDetail;
+      export default PetDetail;
